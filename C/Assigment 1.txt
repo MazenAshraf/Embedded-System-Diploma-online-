@@ -1,0 +1,78 @@
+EX4:
+#print product of 2 numbers
+#include <stdio.h>
+int main()
+{
+	float x,y;
+	printf("enter two numbers: \n");
+	
+	fflush(stdout);
+	scanf("%f %f",&x,&y);
+	x = x*y;
+	printf("Product: %f",x);
+}
+
+
+##################################
+
+EX5:
+#print ASCII Value of Character
+#include <stdio.h>
+int main()
+{
+	printf("Enter a character: ");
+	fflush(stdout);
+	char c;
+	scanf("%c",&c);
+	int ASCII_num = c;
+	printf("ASCII value of %c = %d",c,ASCII_num);
+}
+
+#####################################
+EX6:
+#Swap With Temp
+#include <stdio.h>
+int main()
+{
+	float a,b,temp;
+	printf("Enter value of a: ");
+	fflush(stdout);
+	scanf("%f",&a);
+	printf("Enter value of b: ");
+	fflush(stdout);
+	scanf("%f",&b);
+	fflush(stdout);
+	temp = a;
+	a = b;
+	b = temp;
+
+	printf("After swapping, value of a = %0.2f \n",a);
+	printf("After swapping, value of b = %0.2f \n",b);
+
+}
+#############################################
+EX:7
+#Swap Without temp
+
+#include <stdio.h>
+int main()
+{
+	float a,b;
+	printf("Enter value of a: ");
+	fflush(stdout);
+	scanf("%f",&a);
+	printf("Enter value of b: ");
+	fflush(stdout);
+	scanf("%f",&b);
+	fflush(stdout);
+
+	a = a + b;
+	b = a - b;
+	a = a - b;
+
+	printf("After swapping, value of a = %0.2f \n",a);
+	printf("After swapping, value of b = %0.2f \n",b);
+
+}
+
+

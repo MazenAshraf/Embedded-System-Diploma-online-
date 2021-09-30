@@ -1,0 +1,210 @@
+#Even_Odd_Check
+#include <stdio.h>
+int main()
+{
+	int num;
+	printf("Enter an integer you want to check: ");
+	fflush(stdout);
+	scanf("%d",&num);
+
+	if (num % 2 == 0)
+	{
+		printf("%d is even",num);
+	}
+	else
+	{
+		printf("%d is odd",num);
+	}
+}
+
+########################################################
+#Vowel_Check
+#include <stdio.h>
+int main()
+{
+	char c;
+	printf("Enter an alphabet: ");
+	fflush(stdout);
+	scanf("%c",&c);
+
+	if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+	{
+		printf("%c is a vowel \n",c);
+	}
+	else
+	{
+		printf("%c is a consonant \n",c);
+	}
+}
+
+############################################################
+
+EX3:Largest_Between_3_Numbers
+#include <stdio.h>
+int main()
+{
+	int num1, num2, num3;
+	printf("Enter Three integers: \n");
+	fflush(stdout);
+	scanf("%d %d %d",&num1, &num2, &num3);
+	if (num1 > num2)
+	{
+		if (num1 > num3)
+		{
+			printf("Largest number is %d",num1);
+		}
+		else
+		{
+			printf("Largest number is %d",num3);
+		}
+	}
+	else
+	{
+		if (num2 > num3)
+		{
+			printf("Largest number is %d",num2);
+		}
+	}
+
+}
+##############################################################
+Positive_Negative_zero_Check
+#include <stdio.h>
+int main()
+{
+	int n;
+	printf("Enter a number: \n");
+	fflush(stdout);
+	scanf("%d", &n);
+
+	if (n > 0)
+	{
+		printf("%d is positive\n",n);
+	}
+	else if(n == 0)
+	{
+		printf("You Entered zero \n");
+	}
+	else
+	{
+		printf("%d is negative \n",n);
+	}
+
+}
+
+###########################################################
+#Alphabet Check
+#include <stdio.h>
+int main()
+{
+	char c;
+	printf("Enter a character: \n");
+	fflush(stdout);
+	scanf("%c", &c);
+
+	if ((c >= 'A' && c <='Z') || (c >= 'a' && c <='z'))
+	{
+		printf("%c is an alaphabet \n",c);
+	}
+	else
+	{
+		printf("%c isn't alaphbet \n",c);
+	}
+
+}
+
+#############################################################
+#Natural Number Printed
+#include <stdio.h>
+int main()
+{
+	int n,sum;
+	printf("Enter a Number: \n");
+	fflush(stdout);
+	scanf("%d", &n);
+
+	int i = 0;
+	for (i ; i <= n; i++)
+	{
+		sum += i;
+	}
+
+	printf("sum = %d \n",sum);
+}
+
+##############################################################
+#Factorial Number
+#include <stdio.h>
+int main()
+{
+	int n, fact;
+	printf("Enter a Number: \n");
+	fflush(stdout);
+	scanf("%d", &n);
+
+	if (n > 1)
+	{
+		for (int i = 1; i <= n; i++)
+		{
+			fact *= i;
+		}
+		printf("Factorial = %d \n",fact);
+	}
+
+	else if (n == 0 || n == 1)
+	{
+		printf("Factorial = 1");
+	}
+
+	else
+	{
+		printf("ERROR!!! Factorial of negative number doesn't exist \n");
+	}
+}
+
+##################################################################
+
+#simple calculator using switch case
+#include <stdio.h>
+int main()
+{
+	float num1,num2,result;
+	char c;
+	printf("Enter Operator Either + or - or * or divide: \n");
+	fflush(stdout);
+	scanf("%c", &c);
+
+	printf("Enter Two Operands \n");
+	scanf("%f %f \n",&num1 ,&num2);
+
+	switch(c)
+	{
+	case('+'):
+		{
+			result = num1 + num2;
+			printf("%0.2f",result);
+			break;
+		}
+	case('-'):
+		{
+			result = num1 - num2;
+			printf("%0.2f",result);
+			break;
+		}
+	case('*'):
+		{
+			result = num1 * num2;
+			printf("%0.2f",result);
+			break;
+		}
+	case('/'):
+		{
+			result = num1 / num2;
+			printf("%0.2f",result);
+			break;
+		}
+	default:
+		printf("Enter a pre-defined Operation \n");
+
+	}
+}

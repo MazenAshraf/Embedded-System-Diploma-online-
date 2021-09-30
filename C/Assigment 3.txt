@@ -1,0 +1,319 @@
+//Summation Of Elements Of 2 Matrices
+#include <stdio.h>
+int main()
+{
+	float a[2][2], b[2][2];
+
+	printf("Enter the elements of the 1st Matrix \n");
+	fflush(stdout);
+	int i = 0, j = 0;
+	for(i = 0; i < 2; i++)
+	{
+		for(j = 0; j < 2; j++)
+		{
+			printf("Enter a%d%d:",i + 1,j + 1);
+			fflush(stdout);
+			scanf("%f",&a[i][j]);
+		}
+	}
+
+	printf("Enter the elements of the 2nd Matrix \n");
+	fflush(stdout);
+	for(i = 0; i < 2; i++)
+	{
+		for(j = 0; j < 2; j++)
+		{
+			printf("Enter b%d%d:",i + 1,j + 1);
+			fflush(stdout);
+			scanf("%f",&b[i][j]);
+		}
+	}
+
+	printf("Sum of Matrix: \n");
+	fflush(stdout);
+	for(i = 0; i < 2; i++)
+	{
+		for(j = 0; j < 2; j++)
+		{
+			printf("%0.2f\t",a[i][j] + b[i][j]);
+			fflush(stdout);
+		}
+		printf("\n");
+		fflush(stdout);
+	}
+
+
+}
+
+##############################################################
+//EX:2
+//average of the array
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	const int n;
+	printf("Enter the numbers of data: ");
+	fflush(stdout);
+	scanf("%d", &n);
+	int array[n];
+	int i = 0;
+
+	for (i; i < n; i++)
+	{
+		printf("%d. Enter the number:",i + 1);
+		fflush(stdout);
+		scanf("%d",&array[i]);
+	}
+
+	i = 0;
+	int sum = 0;
+	float result;
+	for (i; i < n; i++)
+	{
+		sum += array[i];
+	}
+	result = sum/i;
+
+	printf("The Average is %0.2f",result);
+}
+
+########################################################
+//EX3:
+//Transpose of the matrix:
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	const int rows, columns;
+	printf("Enter the rows and columns of the matrix: ");
+
+	fflush(stdout);
+	scanf("%d %d", &rows, &columns);
+	int array[rows][columns];
+	int arrayT[columns][rows];
+	int i = 0 ,j = 0;
+
+//	Enter Matrix Elements
+	printf("Enter elements of the matrix: \n");
+	for (i = 0; i < rows; i++)
+	{
+		for(j = 0; j < columns; j++)
+		{
+			printf("Enter elements a%d%d:",i + 1, j + 1);
+			fflush(stdout);
+			scanf("%d",&array[i][j]);
+		}
+	}
+
+//printed the Entered Matrix
+	printf("The Entered Matrix \n");
+	for(i = 0; i < rows; i++)
+	{
+		for(j = 0; j < columns; j++)
+		{
+			printf("%d ",array[i][j]);
+		}
+		printf("\n");
+	}
+
+//	Transpose of the matrix
+	for(i = 0; i < rows; i++)
+	{
+		for(j = 0; j < columns; j++)
+		{
+			arrayT[j][i] = array[i][j];
+		}
+	}
+
+	printf("Transpose of the matrix: \n");
+	for(i = 0; i < columns; i++)
+	{
+		for(j = 0; j < rows; j++)
+		{
+			printf("%d ",arrayT[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+#########################################################
+//EX:4
+//Enter an element in a specific location
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	int Number;
+	int flag = 0;
+	int n , location;
+	int array[Number];
+	int i = 0;
+	int newarray[Number + 1];
+
+	printf("Enter no of elements: ");
+	fflush(stdout);
+	scanf("%d",&Number);
+	fflush(stdin);
+
+
+	for (i = 0; i < Number; i++)
+	{
+		scanf("%d",&array[i]);
+		fflush(stdin);
+	}
+
+
+	printf("Enter element to be inserted: ");
+	fflush(stdout);
+	scanf("%d",&n);
+	fflush(stdin);
+
+	printf("Enter location to be inserted: ");
+	fflush(stdout);
+	scanf("%d",&location);
+	fflush(stdin);
+
+
+	for(i = 0; i < (Number + 1); i++)
+	{
+		if (i == location)
+		{
+			newarray[i] = n;
+			flag = 1;
+			continue;
+		}
+
+		if (! flag)
+		{
+			newarray[i] = array[i];
+		}
+		else
+		{
+			newarray[i] = array[i - 1];
+		}
+	}
+
+	printf("\n");
+	for (i = 0; i < (Number + 1); i++)
+	{
+		printf("%d \t",newarray[i]);
+		fflush(stdout);
+	}
+}
+
+###########################################################
+//Ex:5
+//Search an element in an array and return it's index
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	const int Number;
+	printf("Enter no of elements: ");
+//	fflush(stdout);
+	scanf("%d",&Number);
+
+	int array[Number];
+	int i = 0;
+
+	for (i = 0; i < Number; i++)
+	{
+		scanf("%d",&array[i]);
+	}
+
+	int element,location;
+	printf("Enter the element to be searched: ");
+	scanf("%d",&element);
+
+	for(i = 0; i < Number; i++)
+	{
+		if (array[i] == element)
+		{
+			printf("Number found at location %d \n",i + 1);
+			break;
+		}
+	}
+	printf("Not Found \n");
+}
+######################################################################
+//EX1:
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char *string, letter ;
+	printf("Enter a string \n");
+	fflush(stdout);
+
+	gets(string);
+
+	printf("Enter a character to check its' frequency :");
+	fflush(stdout);
+
+	scanf("%c", &letter);
+
+	int i , n, counter = 0;
+	for (i = 0, n = strlen(string); i < n; i++)
+	{
+		if (string[i] == letter)
+		{
+			counter ++;
+		}
+	}
+	printf("Frequency of %c is %d \n",letter,counter);
+}
+
+######################################################################
+//EX:2
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char s[100];
+	printf("Enter a string \n");
+	fflush(stdout);
+
+	scanf("%s",s);
+
+	int i = 0;
+
+	while(s[i] != '\0')
+	{
+		i++;
+	}
+	printf("the length of the string is %d",i);
+	fflush(stdout);
+}
+##########################################################################
+
+//EX:3
+//Reverse A string
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char string[100], stringRev[100];
+	printf("Enter a string \n");
+	fflush(stdout);
+
+	scanf("%s",string);
+	int i, n = strlen(string);
+
+	for (i = 0; string[i] != '\0'; i++)
+	{
+		stringRev[i] = string[n-i - 1];
+	}
+
+	stringRev[i + 1] = '\0';
+	printf("%s",stringRev);
+}
+
+
+
+

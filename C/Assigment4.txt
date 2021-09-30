@@ -1,0 +1,118 @@
+/*****************************************************************
+ *****************************************************************
+ *
+ * Function to get prime numbers between any given range of numbers
+ *
+ *****************************************************************
+ *****************************************************************/
+
+#include <stdio.h>
+void PrimeNumber (int num1, int num2);
+int main()
+{
+	PrimeNumber(10,30);
+}
+
+void PrimeNumber (int num1, int num2)
+{
+	int i, j;
+	for(i = num1; i <= num2; i++)
+	{
+		for(j = 2; j < i; j++)
+		{
+			if(i % j == 0)
+			{
+				break;
+			}
+		}
+
+		if(i == j)
+		{
+			printf("%d ", i);
+		}
+	}
+
+}
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Function to get prime numbers between any given range of numbers
+ *
+ *****************************************************************
+ *****************************************************************/
+
+#include <stdio.h>
+int factorial (int num);
+int main()
+{
+	int num;
+	printf("Enter a number to get it's factorial:");
+	fflush(stdout);
+	scanf("%d",&num);
+	printf("the factorial of %d is: %d",num, factorial(num));
+}
+
+int factorial (int num)
+{
+	if (num > 1)
+	{
+		return num * factorial(num - 1);
+	}
+
+}
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Function to Reverse any string
+ *
+ *****************************************************************
+ *****************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+void reverseString (char str[]);
+int main()
+{
+	char str[] = "mazen ashraf";
+	gets(str);
+	reverseString(str);
+}
+
+void reverseString (char str[])
+{
+	int size = strlen(str), i;
+	for(i = size - 1; i >= 0; i--)
+	{
+		printf("%c", str[i]);
+	}
+}
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Function to Calculate the power of a number using recursion
+ *
+ *****************************************************************
+ *****************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+long power(int base, int pow);
+int main()
+{
+	printf("%ld",power(3,3));
+}
+
+long power(int base, int pow)
+{
+	if(pow != 0)
+	{
+		return (base * power(base, pow - 1));
+	}
+	else
+	{
+		return 1;
+	}
+}

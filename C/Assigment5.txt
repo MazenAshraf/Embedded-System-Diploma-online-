@@ -1,0 +1,208 @@
+/*****************************************************************
+ *****************************************************************
+ *
+ * Store and Dispaly info using Structures
+ *
+ *****************************************************************
+ *****************************************************************/
+#include <stdio.h>
+
+int main()
+{
+	struct student
+	{
+		char name[30];
+		int roll_num;
+		float marks;
+	};
+
+	struct student one;
+
+	printf("Enter information of students:\n");
+	fflush(stdout);
+	printf("\n");
+
+	printf("Enter name: ");
+	fflush(stdout);
+	scanf("%s",&one.name);
+
+	printf("Enter roll number: ");
+	fflush(stdout);
+	scanf("%d",&one.roll_num);
+
+	printf("Enter marks: ");
+	fflush(stdout);
+	scanf("%f",&one.marks);
+
+	printf("\n");
+	printf("Displaying information: \n");
+	fflush(stdout);
+	printf("name: %s\nroll number: %d\nmarks: %0.2f\n",one.name, one.roll_num, one.marks);
+	fflush(stdout);
+}
+
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Store Calculating distances in inch and feet using Structures
+ *
+ *****************************************************************
+ *****************************************************************/
+#include <stdio.h>
+
+int main()
+{
+	struct sumdistance
+	{
+		float inch;
+		float feet;
+	};
+
+	struct sumdistance distance1, distance2;
+
+	printf("Enter information for 1st Distance: \n");
+	fflush(stdout);
+	printf("\n");
+
+	printf("Enter Feet: ");
+	fflush(stdout);
+	scanf("%f",&distance1.feet);
+	printf("\nEnter Inch: ");
+	fflush(stdout);
+	scanf("%f",&distance1.inch);
+
+
+	printf("Enter information for 2st Distance: \n");
+	fflush(stdout);
+	printf("\n");
+
+	printf("Enter Feet: ");
+	fflush(stdout);
+	scanf("%f",&distance2.feet);
+	printf("\nEnter Inch: ");
+	fflush(stdout);
+	scanf("%f",&distance2.inch);
+
+	float tempinch = distance1.inch + distance2.inch;
+	int counter = 0;
+	while (tempinch > 12)
+	{
+		counter++;
+		tempinch -= 12;
+	}
+	printf("\nSum of distances = %0.2f\' - %0.2f\"",distance1.feet + distance2.feet + counter, tempinch);
+	fflush(stdout);
+
+}
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Store Calculating complex numbers using Structures
+ *
+ *****************************************************************
+ *****************************************************************/
+#include <stdio.h>
+
+int main()
+{
+	struct summation
+	{
+		float real;
+		float imaginary;
+	};
+
+	struct summation num1, num2;
+
+	printf("For 1st complex number: \n");
+	fflush(stdout);
+	printf("\n");
+
+	printf("Enter real and imaginary respectively: ");
+	fflush(stdout);
+	scanf("%f",&num1.real);
+	scanf("%f",&num1.imaginary);
+
+
+	printf("For 2nd complex number: \n");
+	fflush(stdout);
+	printf("\n");
+
+	printf("Enter real and imaginary respectively: ");
+	fflush(stdout);
+	scanf("%f",&num2.real);
+	scanf("%f",&num2.imaginary);
+
+	printf("\nSum = %0.1f  %0.1fi",num1.real + num2.real, num1.imaginary + num2.imaginary);
+	fflush(stdout);
+
+}
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Store and Display info of students using Structures
+ *
+ *****************************************************************
+ *****************************************************************/
+#include <stdio.h>
+#define size 2
+int main()
+{
+	struct student
+	{
+		char name[30];
+		int roll_num;
+		float marks;
+	};
+
+	struct student students[size];
+	int i;
+	for (i = 0; i < size; i++)
+	{
+		printf("Enter information of students:\n");
+		fflush(stdout);
+		printf("\n");
+		printf("Enter name: ");
+		fflush(stdout);
+		scanf("%s",&students[i].name);
+		printf("Enter roll number: ");
+		fflush(stdout);
+		scanf("%d",&students[i].roll_num);
+		printf("Enter marks: ");
+		fflush(stdout);
+		scanf("%f",&students[i].marks);
+
+	}
+
+	for (i = 0; i < size; i++)
+	{
+		printf("\n");
+		printf("Displaying information: \n");
+		fflush(stdout);
+		printf("name: %s\nroll number: %d\nmarks: %0.2f\n",students[i].name, students[i].roll_num, students[i].marks);
+		fflush(stdout);
+	}
+}
+
+/*****************************************************************
+ *****************************************************************
+ *
+ * Getting Area of circle using macros
+ *
+ *****************************************************************
+ *****************************************************************/
+#include <stdio.h>
+
+#define CircleArea(r)  r*r*3.14
+int main()
+{
+	float r, area;
+	printf("Enter Radius: \n");
+	fflush(stdout);
+	scanf("%f",&r);
+	area =  CircleArea(r);
+	printf("Area of circle with radius:%0.1f is: %0.2f",r,area);
+	fflush(stdout);
+}

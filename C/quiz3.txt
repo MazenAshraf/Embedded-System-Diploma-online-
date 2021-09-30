@@ -1,0 +1,158 @@
+//compare string from user with username
+
+#include <stdio.h>
+
+int main()
+{
+	char username[20]="Mazen Ashraf";
+	char str[20];
+
+	printf("Enter a string\n");
+	fflush(stdout);
+	gets(str);
+
+	if (strcmp(username,str) == 0)
+	{
+		printf("same username\n");
+		fflush(stdout);
+	}
+	else
+	{
+		printf("Not the same username\n");
+		fflush(stdout);
+	}
+	return 0;
+}
+
+#############################################################
+//swap two arrays of different lengths
+
+#########################################################
+
+
+//reverse elemnets of array
+
+#include <stdio.h>
+
+int main()
+{
+	int A[5] = {1, 2, 3, 4, 5};
+	int B[5];
+	int i, n = sizeof(A) / 4;
+
+	for (i = 0; i < n; i++)
+	{
+		B[i]= A[n - i - 1];
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		printf("A: %d \t",A[i]);
+	}
+
+	printf("\n");
+
+	for (i = 0; i < n; i++)
+	{
+		printf("B: %d \t",B[i]);
+	}
+
+
+	return 0;
+}
+#########################################################
+//check if a number is power of 3
+
+#include <stdio.h>
+#include <math.h>
+
+int ispowerthree (int n);
+
+
+int main()
+{
+	int n;
+	printf("Enter a number:");
+	fflush(stdout);
+
+	scanf("%d",&n);
+	fflush(stdin);
+
+	printf("%d",ispowerthree(n));
+	fflush(stdout);
+
+	return 0;
+}
+
+int ispowerthree (int n)
+{
+	if (n == 0)
+		return 1;
+
+	while (n != 1)
+	{
+		if (n %3 != 0)
+		{
+			return 1;
+		}
+		else
+		{
+			n /= 3;
+		}
+	}
+	return 0;
+}
+############################################################
+//clearing a specified bit then printing the value of the number
+#include <stdio.h>
+int clearingbit (int x, int bit);
+
+int main()
+{
+int x, bit;
+printf("Input Number: ");
+fflush(stdout);
+
+scanf("%d",&x);
+fflush(stdin);
+
+printf("Bit Position: ");
+fflush(stdout);
+
+scanf("%d",&bit);
+fflush(stdin);
+
+printf("%d",clearingbit(x,bit));
+fflush(stdout);
+}
+
+int clearingbit (int x, int bit)
+{
+	return (x &= ~(1 << bit));
+}
+
+#####################################################
+//get last occurence of a number in array
+#include <stdio.h>
+int getlastoccurence(int array[],int size, int n);
+
+int main()
+{
+	int array[] = {1,2,3,4,5,6,4};
+	int size = sizeof(array) / 4;
+	int n = 6;
+	printf("%d", getlastoccurence(array,size,n));
+}
+
+int getlastoccurence(int array[],int size, int n)
+{
+	int i;
+	for (i = 0; i < size; i++)
+	{
+		if (array[size - i - 1] == n)
+		{
+			return size - 1;
+		}
+	}
+	return -1;
+}

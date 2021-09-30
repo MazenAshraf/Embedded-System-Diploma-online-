@@ -1,0 +1,124 @@
+/**********************************
+ *
+ * Changing value with Pointers
+ *
+ **********************************/
+#include <stdio.h>
+
+int main()
+{
+
+	int m = 29;
+	int* ptr = &m;
+	printf("Address of m is: 0x%x\n",ptr);
+	printf("The value of m is: %d\n", *ptr);
+
+	printf("NOW ab is assigned with the address of m\n");
+	int* ab = &m;
+	printf("Address of ab is: 0x%x\n",ab);
+	printf("The content of ab is: %d\n", *ab);
+
+	printf("Now the value of m is assigned to 34\n");
+	m = 34;
+	printf("Address of ab is: 0x%x\n",ab);
+	printf("The content of ab is: %d\n", *ab);
+
+	printf("Now ab is assigned value of 7\n");
+	*ab = 7;
+	printf("Address of ab is: 0x%x\n",ab);
+	printf("The content of ab is: %d\n", *ab);
+
+
+
+	return 0;
+}
+
+/**********************************
+ *
+ * Printing alphabetic character using pointers
+ *
+ **********************************/
+#include <stdio.h>
+
+int main()
+{
+	char* alp[26];
+	alp[0] = NULL;
+	int i;
+	for(i = 0; i < 26; i++)
+	{
+		*alp = 'A' + i;
+	}
+
+	for(i = 25; i >= 0; i--)
+	{
+		printf("%c\t", *alp - i);
+		fflush(stdout);
+	}
+	return 0;
+}
+
+/**********************************
+ *
+ * Reversing a string using pointers
+ *
+ **********************************/
+#include <stdio.h>
+
+int main()
+{
+	char str[100];
+	printf("Enter a string:\n");
+	fflush(stdout);
+	scanf("%s",&str);
+
+	char* ptr = &str;
+	int counter = 0, i;
+
+	while(*ptr != '\0')
+	{
+		counter++;
+		ptr += 1;
+	}
+
+	ptr = &str;
+
+	for (i = counter; i >= 0; i--)
+	{
+		printf("%c", *(ptr + i));
+		fflush(stdout);
+	}
+
+	return 0;
+}
+
+/**********************************
+ *
+ * Reversing an array using pointers
+ *
+ **********************************/
+#include <stdio.h>
+#define size 5
+int main()
+{
+	int arr[size];
+	int* ptr = &arr;
+	int i;
+	for(i = 0; i < size; i++)
+	{
+		printf("Enter element number %d: ", i + 1);
+		fflush(stdout);
+		scanf("%d",&arr[i]);
+	}
+
+
+	printf("Elements of array after being reversed\n");
+	fflush(stdout);
+	for(i = size; i >0; i--)
+	{
+		printf("Enter element number %d: %d\n", i, *(ptr + i - 1));
+		fflush(stdout);
+	}
+
+	return 0;
+}
